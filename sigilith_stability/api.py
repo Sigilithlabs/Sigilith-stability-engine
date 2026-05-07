@@ -2,8 +2,6 @@
 
 from __future__ import annotations
 
-from typing import List
-
 from fastapi import FastAPI
 from pydantic import BaseModel
 
@@ -23,7 +21,7 @@ app = FastAPI(
 class AnalyseRequest(BaseModel):
     """Request body for the /analyse endpoint."""
 
-    lines: List[str]
+    lines: list[str]
 
 
 @app.post("/analyse")
