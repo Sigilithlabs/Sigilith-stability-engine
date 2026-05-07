@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.backends.legacy:build"
+
+[project]
+name = "sigilith-stability"
+version = "0.1.0"
+description = "Structural drift detection across symbolic strings"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+dependencies = [
+    "fastapi>=0.100.0",
+    "uvicorn[standard]>=0.23.0",
+    "pydantic>=2.0.0",
+]
+
+[project.scripts]
+sigilith-stability = "sigilith_stability.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["sigilith_stability*"]
